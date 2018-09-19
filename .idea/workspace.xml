@@ -5,24 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30f4bd38-a78a-4953-bd7f-806930bda4ac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/add_del_group.php" afterPath="$PROJECT_DIR$/ajax/add_del_group.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/ajax.php" afterPath="$PROJECT_DIR$/ajax/ajax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/apdate2.php" afterPath="$PROJECT_DIR$/ajax/apdate2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/creatLink.php" afterPath="$PROJECT_DIR$/ajax/creatLink.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/del.php" afterPath="$PROJECT_DIR$/ajax/del.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/gl_search.php" afterPath="$PROJECT_DIR$/ajax/gl_search.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/nomers.php" afterPath="$PROJECT_DIR$/ajax/nomers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax/screenIcon.php" afterPath="$PROJECT_DIR$/ajax/screenIcon.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style2.css" afterPath="$PROJECT_DIR$/css/style2.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/categ.js" afterPath="$PROJECT_DIR$/js/categ.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/script.js" afterPath="$PROJECT_DIR$/js/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/scriptAjax.js" afterPath="$PROJECT_DIR$/js/scriptAjax.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/script_1.js" afterPath="$PROJECT_DIR$/js/script_1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/l.php" afterPath="$PROJECT_DIR$/l.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/script.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
@@ -91,6 +75,26 @@
                 <marker date="1537351183897" expanded="true" signature="26105:26175" ph="..." />
                 <marker date="1537351183897" expanded="true" signature="26595:26725" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -160,35 +164,6 @@
                 <marker date="1537168659130" expanded="false" signature="1635:1701" ph="..." />
                 <marker date="1537168659130" expanded="false" signature="1865:1935" ph="..." />
                 <marker date="1537168659130" expanded="true" signature="2427:2569" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_del_group.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ajax/add_del_group.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4428">
-              <caret line="246" column="50" lean-forward="false" selection-start-line="246" selection-start-column="50" selection-end-line="246" selection-end-column="50" />
-              <folding>
-                <marker date="1536912185340" expanded="true" signature="186:266" ph="SELECT `name... group_links" />
-                <marker date="1536912185340" expanded="true" signature="1462:1503" ph="SELECT `name... group_links" />
-                <marker date="1536912185340" expanded="true" signature="1677:2658" ph="INSERT INTO `group_links`... " />
-                <marker date="1536912185340" expanded="true" signature="2875:2907" ph="SELECT COUNT... group_links" />
-                <marker date="1536912185340" expanded="true" signature="3043:3122" ph="UPDATE `grou... " />
-                <marker date="1536912185340" expanded="true" signature="3182:3232" ph="SELECT * FRO... ${$tbCat}" />
-                <marker date="1536912185340" expanded="true" signature="3713:3795" ph="SELECT `name... group_links" />
-                <marker date="1536912185340" expanded="true" signature="3931:3997" ph="DELETE FROM " />
-                <marker date="1536912185340" expanded="true" signature="4082:4137" ph="DELETE FROM " />
-                <marker date="1536912185340" expanded="true" signature="4212:4244" ph="SELECT COUNT... group_links" />
-                <marker date="1536912185340" expanded="true" signature="4474:4545" ph="UPDATE `grou... " />
-                <marker date="1536912185340" expanded="true" signature="4894:4930" ph="SELECT * FRO... group_links" />
-                <marker date="1536912185340" expanded="true" signature="5570:5633" ph="SELECT `name... group_links" />
-                <marker date="1536912185340" expanded="true" signature="5866:6278" ph="UPDATE `${$t... " />
-                <marker date="1536912185340" expanded="true" signature="6441:6468" ph="SELECT `name... ${$tbCat}" />
-                <marker date="1536912185340" expanded="true" signature="6441:6469" ph="SELECT `name... ${$tbCat}" />
-                <marker date="1536912185340" expanded="true" signature="6873:7374" ph="UPDATE `${$t... " />
-                <marker date="1536912185340" expanded="true" signature="7475:7571" ph="UPDATE `${$t... " />
               </folding>
             </state>
           </provider>
@@ -275,7 +250,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$USER_HOME$/AppData/Local/Temp/scp04663/home/r/ruraeghw/blog/public_html/lin/config.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/ajax/get.php" />
         <option value="$PROJECT_DIR$/ajax/delMany.php" />
         <option value="$PROJECT_DIR$/../ajax-ex/creatLink.php" />
@@ -299,6 +273,7 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/js/script_1.js" />
         <option value="$PROJECT_DIR$/js/script.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -671,12 +646,12 @@
       <workItem from="1536735901749" duration="14249000" />
       <workItem from="1536765856356" duration="31745000" />
       <workItem from="1537166771947" duration="3000000" />
-      <workItem from="1537351137066" duration="136000" />
+      <workItem from="1537351137066" duration="276000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172691000" />
+    <option name="totallyTimeSpent" value="172831000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -689,7 +664,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17750533" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -697,7 +672,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889125" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="1918" y="2" width="1920" height="1040" />
+      <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32889125" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="1918" y="2" width="1920" height="1040" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -869,13 +844,6 @@
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/scp04663/home/r/ruraeghw/blog/public_html/lin/config.php" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ajax/get.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1103,14 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/categ.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="774">
@@ -1257,6 +1217,22 @@
             <marker date="1537351183897" expanded="true" signature="26105:26175" ph="..." />
             <marker date="1537351183897" expanded="true" signature="26595:26725" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
