@@ -1,0 +1,127 @@
+body {
+	background: gray;
+}
+
+/*-------   BEGIN HEADER   ---------*/
+.war {
+	position: relative;
+}
+
+#but_form {
+	background: blue;
+	padding: 7px 10px;
+	font-size: 18px;
+	position: absolute;
+	right: 100px;
+	top: 10px;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+	#link_add {
+		position: absolute;
+		font-size: 18px;
+		top: 50px;
+		right: 0;
+		width: 250px;
+		display: none;
+		padding: 10px 15px;
+		background: gray;
+		border: 3px solid #fff;
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		z-index: 100;
+
+	}
+	
+	#link_add  input {
+		width: 90%;
+		border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+	}
+	
+	#link_add  h3 {
+		margin: 10px 0 5px 0;
+		font-size: 16px;
+	}
+	
+	#title {
+		height: 70px;
+		width: 90%;
+	}
+	
+	#but_send {
+		margin: 15px 0;
+		padding: 7px;
+		font-size: 16px;
+	}	
+
+#wrapper {
+	margin: 60px auto;
+	width: 90%;
+	//height: 80%;
+	height: 750px;
+	background: gold;
+	border-radius: 20px;
+}
+
+#wrapper ul {
+	padding: 10px;
+}
+
+#wrapper ul  li {
+	float: left;
+	margin: 20px 20px;
+	width: 140px;
+	height: 80px;
+	background: lime;
+	border-radius: 10px;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#wrapper ul  li a {
+	text-decoration: none;
+	color: blue;
+	font-weight: bold;
+}
+
+#wrapper ul  li a:hover {
+	text-decoration: underline;
+	display: block;
+}
+
+/*-------   END HEADER   ---------*/
+#header {
+
+}
+
+
+/*-------   BEGIN MENU   ---------*/
+#menu {
+
+}
+/*-------   END MENU   ---------*/
+
+
+
+/*-------   BEGIN CONTENT   ---------*/
+#content {
+
+}
+/*-------   END CONTENT   ---------*/
+
+
+
+/*-------   BEGIN FOOTER   ---------*/
+#footer {
+
+}
+/*-------   END FOOTER   ---------*/
