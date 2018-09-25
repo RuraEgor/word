@@ -9,7 +9,7 @@ header("Content-Type: text/html; charset=UTF-8");
 
 
 
-$db = "link";
+$db = "word";
 $host = "localhost";
 $user = "root";
 $pass = "";
