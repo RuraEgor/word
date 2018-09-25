@@ -11,7 +11,7 @@ var searchTimeout;
 
 $(document).ready(function () {
 
-//------  ВЫВОД ДИНАМИЧЕСКОГО СПИСКА ВАРИАНТОВ В ПОИСКОВОМ ОКНЕ
+    //------  ВЫВОД ДИНАМИЧЕСКОГО СПИСКА ВАРИАНТОВ В ПОИСКОВОМ ОКНЕ
     $("#search").keyup(function (w) {
 
         var znSrch = $(this).val();
@@ -20,7 +20,7 @@ $(document).ready(function () {
 
             $(this).addClass('css_zn');
 
-            if (!!$(".glob_search").attr("checked")) {
+            if (!!$(".glob_search").prop("checked")) {
 
                 //var znSrch_1 = new RegExp(znSrch,'i');
 

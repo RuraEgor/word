@@ -6,7 +6,8 @@ $_POST['vodca'] = (isset($_POST['vodca'])) ? $_POST['vodca'] : '&&&';
 if ($_POST['vodca'] == 'yes') {
 
     $mes = array();
-    $per = mysql_query(" SELECT `name`,`view`,`id`,`date`,`timeCreat` FROM `$tbCat` ORDER BY `number` ASC ");
+    //$per = mysql_query(" SELECT `name`,`view`,`id`,`date`,`timeCreat` FROM `$tbCat` ORDER BY `number` ASC ");
+    $per = mysql_query(" SELECT * FROM `$tbCat` ORDER BY `number` ASC ");
 
     while ($row = mysql_fetch_assoc($per)) {
         $mes['name'][] = $row['name'];

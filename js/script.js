@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
 
 
-//-- Работа с увеличением текста в текстовом окне
+    //-- Работа с увеличением текста в текстовом окне
     $(".js_font_lit").click(function () {
         $("#wr_form").removeClass("font_14");
         $("#wr_form").removeClass("font_20");
@@ -59,7 +59,7 @@ $(document).ready(function () {
         $('#wrap_form').slideToggle(100);
     });
 
-    $("#header .addGroup").attr("checked", '');  //--  ОТМЕНА ВЫВОДА СОВМЕСТН. КАТЕГОРИЙ ССЫЛОК
+    $("#header .addGroup").prop("checked", false);  //--  ОТМЕНА ВЫВОДА СОВМЕСТН. КАТЕГОРИЙ ССЫЛОК
 
 //-----  ВЫВОД КАТЕГОРИЙ В МОДАЛЬНОМ ОКНЕ ----
     $('#all_categories').click(function () {
@@ -281,7 +281,7 @@ $(document).ready(function () {
             success: function (data) {
 
                 //-- Флажок позвол. добовлять к вывед. ссылкам новую группу
-                if (!$('#header .addGroup:checkbox').attr("checked")) {
+                if (!$('#header .addGroup:checkbox').prop("checked")) {
                     $("#wrapper ul.bom").empty();  //-- очистка списка
                     $(".nameGroup").html('<span>' + selName + '</span>');  //--  ВЫВОД ИМЕНИ ГРУППЫ В ЗАГОЛОВКЕ
                     var color = '';
@@ -293,7 +293,7 @@ $(document).ready(function () {
 
                     var color = "background: rgba(" + rCol + "," + gCol + "," + bCol + ",0.4)";
 
-                    $(".nameGroup").append(" | <span style='" + color + "'>" + select + "</span>");
+                    $(".nameGroup").append(" | <span style='" + color + "'>" + selName + "</span>");
                 }
 
                 for (var i = 0; i < data.length; i++) {
@@ -325,8 +325,8 @@ $(document).ready(function () {
                 }
 
                 //-- Флажок позвол. добовлять к вывед. ссылкам новую группу
-                if ($('#header .addGroup:checkbox').attr("checked")) {
-
+                if ($('#header .addGroup:checkbox').prop("checked")) {
+                    alert( 7888 );
                     $("#wrapper .number").each(function (indx, element) {
                         $(element).text(indx + 1);
                     });
@@ -753,8 +753,19 @@ $(document).ready(function () {
 				</li>");
     }
 
+
+
+
+    //====  TAKE COLOR
+    $(".js-wrap-color__cont").on('click', '.js-wrap-color__item', function () {
+        let color = $(this).attr("data-color");
+        $(this).closest('.wrap-color')
+               .find("input[type=color]").val(color);
+    });
+
 //------------  КОНЕЦ КОДА------------------------
 });
+
 
 
 $(window).resize(function(){
