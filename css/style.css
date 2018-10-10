@@ -17,6 +17,10 @@ body {
 	flex-grow: 1;
 }
 
+.df {
+	display: flex;
+}
+
 /*-------   BEGIN MODAL_FORM   ---------*/
 
 #header{
@@ -242,10 +246,9 @@ body {
 	font-weight: bold;
 	text-align: center;
 	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
 	float: right;
 	margin-right: 5px;
+	cursor: pointer;
 }
 
 #but_group_form {
@@ -613,23 +616,55 @@ body {
     width: 85px;
     z-index: 50;
 }
-
-
 /*--------------------------------*/
 
 
 /*-------   INPUT MODAL   ---------*/
+#apdate_form input[type="checkbox"],
+#link_add input[type="checkbox"],
+#group_add input[type="radio"] {
+	width: auto;
+}
 
-	#apdate_form input[type="checkbox"],
-	#link_add input[type="checkbox"],
-	#group_add input[type="radio"] {
-    	width: auto;
-	}
+#group_add input[type="color"],
+#group_add input[type="text"]:nth-child(2) {
+	width: 92%;
+}
+/*-------   END INPUT MODAL   ---------*/
 
-	#group_add input[type="color"],
-	#group_add input[type="text"]:nth-child(2) {
-		width: 92%;
-	}
+
+/*-------   INPUT MODAL   ---------*/
+.backgr-rd {
+	margin-right: 10px;
+}
+
+.inp-backgr {
+	border: none;
+	padding: 0;
+	display: block;
+}
+
+.wrap-color {
+
+}
+
+.wrap-color_groop {
+	margin-bottom: 20px;
+}
+
+.wrap-color__cont {
+	display: flex;
+	margin-top: 10px;
+	margin: 10px -4px 0;
+}
+
+.wrap-color__item {
+	margin: 0 4px;
+	height: 22px;
+	flex-grow: 1;
+	cursor: pointer;
+}
+
 /*-------   END INPUT MODAL   ---------*/
 
 
@@ -660,3 +695,60 @@ body {
 
 }
 /*-------   END FOOTER   ---------*/
+
+
+@media (max-width: 1024px) {
+
+	#all_links {
+		display: none;
+	}
+
+	.link-trans {
+		display: none;
+	}
+
+
+	#but_group_form,
+	#but_form {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 6px;
+	}
+
+	.all_categories {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 6px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin: 0 10px;
+		cursor: pointer;
+	}
+}
+/*------  1024  -----*/
+
+
+@media (max-width: 480px) {
+
+	#header {
+		padding: 10px 5px 0;
+		height: 90px;
+	}
+
+	#wrapper ul {
+		grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+	}
+
+	#all_group ul {
+		grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)) !important;
+	}
+}
+/*------  480  -----*/

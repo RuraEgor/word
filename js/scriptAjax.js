@@ -68,6 +68,9 @@ $(document).ready(function () {
 
                 lastElemLinkAdd();
 
+                //-- SCROLL UP
+                $('html,body').animate({scrollTop: 0}, 'slow');
+
                 $("#lastTventy").slideDown(1000);
                 $('.addLastNew').show('slow');
             }
@@ -189,7 +192,7 @@ $(document).ready(function () {
     });
 
 
-//------------  ОБНОВЛЕНИЕ ЭЛЕМЕНТА  ------------------------
+    //------------  ОБНОВЛЕНИЕ ЭЛЕМЕНТА  ------------------------
     $('#wrapper, #lastTventy').on('click', '.apdate', function () {
 
         $('#apdate_form').slideToggle(300);
@@ -226,7 +229,6 @@ $(document).ready(function () {
                 }
 
                 //Вывод группы ссылки в скрытое поле
-                // var groupFirst = $('#apdate_form option:selected').text();
                 var groupFirst = $('h1.nameGroup span').attr('data-id-cat');
                 $("#apdate_form .hidGroup").val(groupFirst);
 
@@ -234,7 +236,6 @@ $(document).ready(function () {
                 $("#apdate_form .links").val(data["links"]);
 
                 //Вывод заднего фона ссылки
-                // $("#apdate_form .background_2").attr('value',data["background"]); //todo
                 $("#apdate_form .background_2").val(data["background"]);
 
                 //Флажок определ. использ. фона
@@ -249,7 +250,7 @@ $(document).ready(function () {
     });
 
 
-//------------  ОБНОВЛЕНИЕ ЭЛЕМЕНТА 2  ----------------
+    //------------  ОБНОВЛЕНИЕ ЭЛЕМЕНТА 2  ----------------
     $('#apdate_form .but_send').click(function () {
 
         var apDate = new Array();
@@ -300,15 +301,12 @@ $(document).ready(function () {
                     } else {
 
                         //--  УДАЛЕНИЕ ИЗ СПИСКА ССЫЛКИ С ИЗМЕНЕННОЙ ГРУППОЙ
-                        if (!$('#header .addGroup:checkbox').attr("checked")) {
+                        if (!$('#header .addGroup:checkbox').prop("checked")) {
 
                             if (data[0] == 4) {
+
                                 //--  ВНЕШНЕЕ УДАЛЕНИЕ ЭЛЕМЕНТА ИЗ СИСТЕМЫ
-                                $("#wrapper li").each(function () {
-                                    if ($(this).attr('id_number') == apDate[0]) {
-                                        $(this).remove();
-                                    }
-                                });
+                                $("#wrapper li[id_number=" + apDate[0] + "]").remove();;
 
                                 //--  НУМЕРОВАНИЕ ЭЛЕМЕНТОВ
                                 $("#wrapper .number").each(function (indx, element) {
@@ -495,9 +493,6 @@ function lastElemLinkAdd() {
             $("#lastTventy .number").each(function (indx, element) {
                 $(element).text(indx + 1);
             });
-
-            //-- SCROLL UP
-            $('html,body').animate({scrollTop: 0}, 'slow');
 
             countElemAll += countElemAdd;
             $('.addLastNew').text(countElemAll);

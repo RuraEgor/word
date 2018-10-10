@@ -593,11 +593,6 @@
     	overflow-y: scroll;
 		display: none;
 	}
-
-	#wrapper ul li {
-		height: 220px;
-	}
-
 }
 /*------  550px  -----*/
 
@@ -606,10 +601,9 @@
 	#wrapper ul li {
 	    border-radius: 14px;
 	    float: left;
-	    height: 230px;
 	    margin: 10px 0px;
 	    overflow: hidden;
-	    padding: 10px 15px;
+	    padding: 5px 10px;
 	    text-align: center;
 	    box-sizing: border-box;
 	}
