@@ -47,12 +47,8 @@ $(document).ready(function () {
 
                                 $("#wrapper ul.bom").append(
                                     "<li id_number = '" + data[i]['id'] + "' title = '" + data[i]['data'] + "' data-sec = '" + data[i]['timeCreat'] + "' >\
-											<div class='item' title='" + data[i]['title'] + "' style ='background: " + data[i]['background'] + "' ><a href='" + data[i]['links'] + "' rel='" + data[i]['group'] + "' target='_blank' style ='background: url(" + data[i]['icon'] + ") no-repeat center/87% 82%;' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
+											<div class='item' title='" + data[i]['title'] + "' style ='background: " + data[i]['background'] + "' ><a href='" + data[i]['links'] + "' rel='" + data[i]['group'] + "' target='_blank' style ='background-image: url(" + data[i]['icon'] + ");' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
 											\
-												<div class='view_link' title='' style ='background: url(" + data[i]['screen'] + ") no-repeat center/100% 100%;' ></div> \
-												\
-												<div class='screen' title='Показывает полный скриншот страницы'><a href='" + data[i]['full_screen'] + "' target='_blank'></a></div> \
-												\
 												<div class='apdate'  title='Позваляет изменить параметры ссылки'></div>\
 												\
 												<div class='del'  title='Удаляет данную ссылку'></div>\
@@ -168,7 +164,7 @@ function searchGetData(text) {
 
             if (data['id'].length) {
                 for (var ii = 0; ii < data['id'].length; ii++) {
-                    $("#sel_ch").append("<li data-sp_id='" + data["id"][ii] + "' ><a href='" + data["links"][ii] + "'  target='blank' title='" + data["group"][ii] + "'>" + data["name"][ii] + "</a></li>");
+                    $("#sel_ch").append("<li data-sp_id='" + data["id"][ii] + "' ><p title='" + data["group"][ii] + "'>" + data["name"][ii] + "</p></li>");
                 }
             }
         }

@@ -3,8 +3,7 @@ require_once '../config.php';
 
 $_POST['name'] = (isset($_POST['name'])) ? $_POST['name'] : '&*!';
 $_POST['group'] = (isset($_POST['group'])) ? $_POST['group'] : '&*!';
-$_POST['links'] = (isset($_POST['links'])) ? $_POST['links'] : '&*!';
-$_POST['choise'] = (isset($_POST['choise'])) ? $_POST['choise'] : '&*!';
+$_POST['imgUrl'] = (isset($_POST['imgUrl'])) ? $_POST['imgUrl'] : '&*!';
 $_POST['title'] = (isset($_POST['title'])) ? $_POST['title'] : '&*!';
 
 if (isset($_POST['background'])) {
@@ -30,7 +29,7 @@ function get_favicon($url) {
 
 $mes = 0;
 
-if ($_POST['links'] != '&*!') {
+if ($_POST['name'] != '&*!') {
 
 //------ ПРВОЕРЯЕМ СУЩЕСТВУЕТ ЛИ ССЫЛКА С ТАКИМ ЖЕ ИМЕНЕМ ЧТО И ТА КОТОРУЮ СОБИР. СОЗДАТЬ  ------
     $rew = mysql_query("SELECT `name`,`group_id` FROM `$tbLink`");
@@ -66,8 +65,7 @@ if ($_POST['links'] != '&*!') {
                                                     `name`,
                                                     `group_id`,
                                                     `group`,
-                                                    `links`,
-                                                    `choise`,
+                                                    `icon`,
                                                     `background`,
                                                     `title`,
                                                     `data`,
@@ -76,8 +74,7 @@ if ($_POST['links'] != '&*!') {
                                                     '" . $_POST['name'] . "',
                                                     '" . $_POST['group'] . "',
                                                     '" . $name_group . "',
-                                                    '" . $_POST['links'] . "',
-                                                    '" . $_POST['choise'] . "',
+                                                    '" . $_POST['imgUrl'] . "',
                                                     '" . $_POST['background'] . "',
                                                     '" . $_POST['title'] . "',
                                                     '" . $now . "',
@@ -107,7 +104,7 @@ if ($_POST['links'] != '&*!') {
 
 
         $datas[1] = $id_link;
-        $datas[2] = $_POST['links'];
+        $datas[2] = $_POST['imgUrl'];
     }
 
     if ($nalich == 1) {

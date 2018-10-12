@@ -24,13 +24,9 @@ if ($apDate != '&&&') {
         $masDataLink['group_id'] = $row["group_id"];
         $masDataLink['group'] = $row["group"];
         $masDataLink['name'] = $row["name"];
-        $masDataLink['links'] = $row["links"];
         $masDataLink['number'] = $row["number"];
-        $masDataLink['choise'] = $row["choise"];
         $masDataLink['background'] = $row["background"];
         $masDataLink['icon'] = $row["icon"];
-        $masDataLink['screen'] = $row["screen"];
-        $masDataLink['full_screen'] = $row["full_screen"];
         $masDataLink['title'] = $row["title"];
         $masDataLink['data'] = $row["data"];
         $masDataLink['timeCreat'] = $row["timeCreat"];
@@ -39,9 +35,8 @@ if ($apDate != '&&&') {
 
     //----------  ОБНОВЛЕНИЕ ДАННЫХ ЕСЛИ ИМЯ И ГРУППА ОДИНАКОВЫ -------
     if ($masDataLink["name"] == $apDate[1] && $masDataLink["group_id"] == $apDate[2]) {
-        $apdate = mysql_query(" UPDATE `$tbLink` SET `links` = '" . $apDate[3] . "',
-                                                     `background` = '" . $apDate[4] . "',
-                                                     `choise` = '" . $apDate[5] . "',
+        $apdate = mysql_query(" UPDATE `$tbLink` SET `background` = '" . $apDate[4] . "',
+                                                     `icon` = '" . $apDate[3] . "',
                                                      `title` = '" . $apDate[6] . "'
                                                  WHERE id = " . $apDate[0] . " ");
 
@@ -67,9 +62,8 @@ if ($apDate != '&&&') {
 
         if (!$sameNameLink) {
             $apdate = mysql_query(" UPDATE `$tbLink` SET `name` = '" . $apDate[1] . "',
-                                                         `links` = '" . $apDate[3] . "',
                                                          `background` = '" . $apDate[4] . "',
-                                                         `choise` = '" . $apDate[5] . "',
+                                                         `icon` = '" . $apDate[3] . "',
                                                          `title` = '" . $apDate[6] . "'
                                                      WHERE id = " . $apDate[0] . " ");
 
@@ -109,11 +103,10 @@ if ($apDate != '&&&') {
                 //-- ПОЛНОЕ ОБНАВЛЕНИЕ УКАЗАННОЙ ССЫЛКИ
                 $apdate = mysql_query(" UPDATE `$tbLink` SET `name` = '" . $apDate[1] . "',
                                                              `number` = '" . $kolLin . "',
-                                                             `links` = '" . $apDate[3] . "',
                                                              `group_id` = '" . $apDate[2] . "',
+                                                             `icon` = '" . $apDate[3] . "',
                                                              `group` = '" . $apDate[9] . "',
                                                              `background` = '" . $apDate[4] . "',
-                                                             `choise` = '" . $apDate[5] . "',
                                                              `title` = '" . $apDate[6] . "'
                                                          WHERE id = " . $apDate[0] . " ");
 
@@ -155,20 +148,18 @@ if ($apDate != '&&&') {
                 mysql_query("INSERT INTO `$tbLink` (
                                                     `name`,
                                                     `group_id`,
-                                                    `links`,
+                                                    `icon`,
                                                     `number`,
                                                     `background`,
-                                                    `choise`,
                                                     `title`,
                                                     `data`
                                                     )
                                             VALUES (
                                                     '" . $apDate[1] . "',
                                                     '" . $apDate[2] . "',
-                                                    '" . $apDate[3] . "',
+                                                    '" . $apDate[3] . "'
                                                     '" . $kolLin . "',
                                                     '" . $apDate[4] . "',
-                                                    '" . $apDate[5] . "',
                                                     '" . $apDate[6] . "',
                                                     '" . $now . "'
                                                     )

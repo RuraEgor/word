@@ -8,7 +8,7 @@ $_POST['QUERY'] = (isset($_POST['QUERY'])) ? $_POST['QUERY'] : '&&&';
 
 if ($_POST['QUERY'] != '&&&') {
 
-    $per = mysql_query(" SELECT `id`,`name`,`links`,`group_id` FROM `$tbLink` ORDER BY `id` ASC ");
+    $per = mysql_query(" SELECT `id`,`name`,`group_id` FROM `$tbLink` ORDER BY `id` ASC ");
 
     $mes = array();
 
@@ -26,7 +26,6 @@ if ($_POST['QUERY'] != '&&&') {
 
             $mes["id"][] = $row["id"];
             $mes["name"][] = $row["name"];
-            $mes["links"][] = $row["links"];
             $mes["group"][] = $row["group"];
 
             if ($i > 10) {
@@ -34,17 +33,6 @@ if ($_POST['QUERY'] != '&&&') {
             }
             $i++;
 
-        } else {
-
-//            $mes["id"][] = $row["id"];
-//            $mes["name"][] = $row["name"];
-//            $mes["links"][] = $row["links"];
-//            $mes["group"][] = $row["group"];
-//
-//            if ($i > 10) {
-//                break;
-//            }
-//            $i++;
         }
 
     }

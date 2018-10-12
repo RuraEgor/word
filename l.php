@@ -108,8 +108,8 @@
             <select>
             </select>
 
-            <h3>Ссылка</h3>
-            <input type="text" name="links" id="links"/>
+            <h3>Изображение</h3>
+            <input type="text" name="img" id="img"/>
 
             <h3>Фон</h3>
             <div class="wrap-color">
@@ -127,12 +127,6 @@
                          style="background: #8000ff"></div>
                 </div>
             </div>
-
-            <p>
-                <label>
-                    <input type="checkbox" id="choise_back"/> - нашжмите если хотите чтобы на вкладки было изображение
-                </label>
-            </p>
 
             <h3>Описание</h3>
             <textarea name="title" id="title"></textarea>
@@ -261,8 +255,8 @@
 
             <input type="hidden" name="hidGroup" class="hidGroup"/>
 
-            <h3>Ссылка</h3>
-            <input type="text" name="links" class="links"/>
+            <h3>Изображение</h3>
+            <input type="text" name="imgCreate" class="imgCreate"/>
             <!--
                 <h3>Фон</h3>
             <input type="text" name="background" class="background_1" />
@@ -283,13 +277,6 @@
                          style="background: #8000ff"></div>
                 </div>
             </div>
-
-            <p>
-                <label>
-                    <input class="choise_back" type="checkbox"/>
-                    - отметьте если хотите чтобы на вкладки было изображение
-                </label>
-            </p>
 
             <p>
                 <label>

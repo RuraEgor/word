@@ -61,7 +61,8 @@ $(document).ready(function () {
 
     $("#header .addGroup").prop("checked", false);  //--  ОТМЕНА ВЫВОДА СОВМЕСТН. КАТЕГОРИЙ ССЫЛОК
 
-//-----  ВЫВОД КАТЕГОРИЙ В МОДАЛЬНОМ ОКНЕ ----
+
+    //-----  ВЫВОД КАТЕГОРИЙ В МОДАЛЬНОМ ОКНЕ ----
     $('#all_categories').click(function () {
         $('#modal_wind').slideToggle(100);
         $('#wrap_form').slideToggle(100);
@@ -119,24 +120,6 @@ $(document).ready(function () {
 
     $('#sizeElem').click(function () {
 
-        /*
-         $.ajax({
-
-         url: "ajax/ajax.php",
-         type: 'post',
-         dataType: 'json',
-         data: { vodca: 777 },
-         success: function(data) {
-
-         // for(var i = 0; i < data.length; i++) {
-
-         //   $(".bom.sortable li:eq(" + i + ") .item > a").attr("style","background: url(" + data[i]['screen'] + ") no-repeat center/7% 2%;");
-         // }
-         }
-         });
-
-         $(".bom.sortable li ").animate({width: '290px', height: '340px', margin: '35px 30px'},1500);
-         */
         if ($(this).hasClass("show-elem")) {
             $("li.no-vis").hide(500, function () {
                 heightZn();
@@ -267,7 +250,7 @@ $(document).ready(function () {
     });
 
 
-//-------  	ВЫВОД КАТЕГОРИИ ИЗ СПИСКА В ЗАГОЛОВКЕ -------
+    //-------  	ВЫВОД КАТЕГОРИИ ИЗ СПИСКА В ЗАГОЛОВКЕ -------
     $("#header > select").change(function () {
 
         var select = $(this).val();  //-- выбранная категория - id
@@ -304,11 +287,9 @@ $(document).ready(function () {
 
                     $("#wrapper ul.bom").append(
                         "<li id_number = '" + data[i]['id'] + "' style='" + color + "'>\
-						<div class='item' title='" + data[i]['title'] + "' style ='background: " + data[i]['background'] + "' ><a href='" + data[i]['links'] + "' rel='" + data[i]['group'] + "' target='_blank' style ='background: url(" + data[i]['icon'] + ") no-repeat center/87% 82%;' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
+						<div class='item' title='" + data[i]['title'] + "' style ='background: " + data[i]['background'] + "' ><a href='" + data[i]['links'] + "' rel='" + data[i]['group'] + "' target='_blank' style ='background-image: url(" + data[i]['icon'] + ");' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
 						\
 							<div class='view_link' title='' style ='background: url(" + data[i]['screen'] + ") no-repeat center/100% 100%;' ></div> \
-							\
-							<div class='screen' title='Показывает полный скриншот страницы'><a href='" + data[i]['full_screen'] + "' target='_blank'></a></div> \
 							\
 							<div class='apdate'  title='Позваляет изменить параметры ссылки'></div>\
 							\
@@ -337,7 +318,7 @@ $(document).ready(function () {
     });
 
 
-//------ ВЫВОДИТ ССЫЛКИ ПРИ ПЕРВОНАЧАЛЬНОЙ ЗАГРУЗКЕ СТРАНИЦЫ  -----
+    //------ ВЫВОДИТ ССЫЛКИ ПРИ ПЕРВОНАЧАЛЬНОЙ ЗАГРУЗКЕ СТРАНИЦЫ  -----
     $.ajax({
 
         url: "ajax/ajax.php",
@@ -351,19 +332,19 @@ $(document).ready(function () {
     });
 
 
-//------------  СОЗДАНИЕ НОВОЙ ССЫЛКИ  ------------------------
+    //------------  СОЗДАНИЕ НОВОЙ ССЫЛКИ  ------------------------
     $('#link_add #but_send').click(function () {
 
         var name = $('#name').val();
+        name = name.trim(name);
+
         var group = $('#link_add option:selected').val();
-        var links = $('#links').val();
-        var choise = $('#choise_back').prop("checked");
-        choise ? choise = 1 : choise = 0;
+        var imgUrl = $('#img').val();
         var background = $('#background').val();
 
         var title = $('#title').val();
 
-        if (name == "" || links == "") {
+        if (name == "") {
             alert("Не все требуемые поля заполнены!");
         } else {
 
@@ -371,7 +352,7 @@ $(document).ready(function () {
                 url: 'ajax/creatLink.php',
                 type: 'post',
                 dataType: 'json',
-                data: {name: name, group: group, links: links, background: background, title: title, choise: choise},
+                data: {name: name, group: group, imgUrl: imgUrl, background: background, title: title},
                 success: function (data) {
 
                     if (data == 1) {
@@ -379,17 +360,6 @@ $(document).ready(function () {
                     } else {
 
                         $(".alert_mess").text('Новая Ссылка \"' + name + '\" добавлена!').fadeIn(500).delay(1500).fadeOut(500);
-
-                        //------------------------------------------------------
-                        $.ajax({
-                            url: 'ajax/screenIcon.php',
-                            type: 'post',
-                            dataType: 'json',
-                            data: {idLin: data[1], linLin: data[2]}
-                            // success: function (dataPar) {}
-
-                        });  //--  КОНЕЦ АЯКС ЗАПРОСА
-
 
                         //-----  ВЫВОД ССЫЛКИ НЕПОСРЕДСВТЕННО НА ЭКРАНЕ
                         $.ajax({
@@ -407,12 +377,8 @@ $(document).ready(function () {
 
                                     $("#wrapper ul.bom").append(
                                         "<li id_number = '" + lstCrLink[0]['id'] + "' title = '" + data[0]['data'] + "' data-sec = '" + data[0]['timeCreat'] + "'>\
-						<div class='item' title='" + lstCrLink[0]['title'] + "' style ='background: " + lstCrLink[0]['background'] + "' ><a href='" + lstCrLink[0]['links'] + "' rel='" + data[0]['group'] + "' target='_blank' style ='background: url(" + lstCrLink[0]['icon'] + ") no-repeat center/87% 82%;' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
+						<div class='item' title='" + lstCrLink[0]['title'] + "' style ='background: " + lstCrLink[0]['background'] + "' ><a href='" + lstCrLink[0]['links'] + "' rel='" + data[0]['group'] + "' target='_blank' style ='background: url(" + lstCrLink[0]['icon'] + ");' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
 						\
-							<div class='view_link' title='' style ='background: url(" + lstCrLink[0]['screen'] + ") no-repeat center/100% 100%;' ></div> \
-							\
-							<div class='screen' title='Показывает полный скриншот страницы'><a href='" + lstCrLink[0]['full_screen'] + "' target='_blank'></a></div> \
-							\
 							<div class='apdate'  title='Позваляет изменить параметры ссылки'></div>\
 							\
 							<div class='del'  title='Удаляет данную ссылку'></div>\
@@ -442,11 +408,7 @@ $(document).ready(function () {
 
 //------------  УДАЛЕНИЕ ССЫЛКИ  --------------
     $('#wrapper, #lastTventy').on('click', '.del', function () {
-        /*
-         var nom = $(this).closest('li').attr('id_number');
-         var elemNom = $(this).closest('li').index();
-         var elemNomName = $(this).closest('li').find('h3').text();
-         */
+
         var nom = $(this).closest('li').attr('id_number');
         var elemNomName = $(this).closest('li').find('h3').text();
 
@@ -501,7 +463,6 @@ $(document).ready(function () {
                     data: {nameLinks: nameLinks},
                     success: function (data) {
 
-                        //$(".item input:checked").closest('li').remove();
                         for (var i = 0; i < nameLinks.length; i++) {
                             $("#wrapper ul.bom li, #lastTventy ul.bom li").each(function () {
                                 if ($(this).attr('id_number') == nameLinks[i]) {
@@ -514,6 +475,12 @@ $(document).ready(function () {
 
                         $("#delMnLks").fadeOut(500);
                         $('#cancelDelMnLks').fadeOut(500);
+
+
+                        //=====  НУМЕРОВАНИЕ ЭЛЕМЕНТОВ
+                        $("#wrapper .number").each(function (indx, element) {
+                            $(element).text(indx + 1);
+                        });
                     }
                 });
             }
@@ -635,33 +602,7 @@ $(document).ready(function () {
     });
 
 
-//------------  БЫСТРАЯ ДЕМОНСТРАЦИЯ СКРИНШОТА  ------------
-    $('#wrapper').on('mousedown', '.view_link', function () {
-        var elemNomName = $(this).attr('style');
-        $("#zoom_screen .down").attr('style', elemNomName);
-        $("#zoom_screen").fadeIn(500);
-        //setTimeout('$("#zoom_screen").stop().fadeIn(500)',1000);
-
-    });
-
-    $('#wrapper, #zoom_screen').on('mouseup', '.view_link', function () {
-        $("#zoom_screen").fadeOut(400, function () {
-            $("#zoom_screen .down").attr('style', '');
-        });
-    });
-
-    $('#zoom_screen').on('mouseup', function () {
-        $("#zoom_screen").fadeOut(400, function () {
-            $("#zoom_screen .down").attr('style', '');
-        });
-    });
-
-    $(".view_link").sortable({distance: 1}); //-- ОТМЕНА ПЕРЕМЕЩЕНИЯ У СПИСКА ДЛЯ ПРОСМ. СКРИНШОТА
-
-//------------
-
-
-//--  ГЛАВНАЯ ФУНКЦИЯ ВЫВОДА ЭЛЕМЕНТОВ КАТЕГОРИИ
+    //--  ГЛАВНАЯ ФУНКЦИЯ ВЫВОДА ЭЛЕМЕНТОВ КАТЕГОРИИ
     function dat(data) {
         for (var i = 0; i < data.length; i++) {
 
@@ -671,12 +612,8 @@ $(document).ready(function () {
 
             $("#wrapper ul.bom").append(
                 "<li id_number = '" + data[i]['id'] + "' title = '" + data[i]['data'] + "' data-sec = '" + data[i]['timeCreat'] + "'>\
-		<div class='item' title='" + data[i]['title'] + "' style ='background: " + data[i]['background'] + "' ><a href='" + data[i]['links'] + "' rel='" + data[i]['group'] + "' target='_blank' style ='background: url(" + data[i]['icon'] + ") no-repeat center/87% 82%;' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
+		<div class='item' title='" + data[i]['title'] + "' style ='background: " + data[i]['background'] + "' ><a href='" + data[i]['links'] + "' rel='" + data[i]['group'] + "' target='_blank' style ='background-image: url(" + data[i]['icon'] + ");' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
 		\
-			<div class='view_link' title='' style ='background: url(" + data[i]['screen'] + ") no-repeat center/100% 100%;' ></div> \
-			\
-			<div class='screen' title='Показывает полный скриншот страницы'><a href='" + data[i]['full_screen'] + "' target='_blank'></a></div> \
-			\
 			<div class='apdate'  title='Позваляет изменить параметры ссылки'></div>\
 			\
 			<div class='del'  title='Удаляет данную ссылку'></div>\
@@ -703,12 +640,8 @@ $(document).ready(function () {
 
         $("#wrapper ul.bom").append(
             "<li id_number = '" + glbData[0]['id'] + "' title = '" + data[i]['data'] + "' data-sec = '" + data[i]['timeCreat'] + "'>\
-					<div class='item' title='" + glbData[0]['title'] + "' style ='background: " + glbData[0]['background'] + "' ><a href='" + glbData[0]['links'] + "' rel='" + data[0]['group'] + "' target='_blank' style ='background: url(" + glbData[0]['icon'] + ") no-repeat center/87% 82%;' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
+					<div class='item' title='" + glbData[0]['title'] + "' style ='background: " + glbData[0]['background'] + "' ><a href='" + glbData[0]['links'] + "' rel='" + data[0]['group'] + "' target='_blank' style ='background: url(" + glbData[0]['icon'] + ");' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
 					\
-						<div class='view_link' title='' style ='background: url(" + glbData[0]['screen'] + ") no-repeat center/100% 100%;' ></div> \
-						\
-						<div class='screen' title='Показывает полный скриншот страницы'><a href='" + glbData[0]['full_screen'] + "' target='_blank'></a></div> \
-						\
 						<div class='apdate'  title='Позваляет изменить параметры ссылки'></div>\
 						\
 						<div class='del'  title='Удаляет данную ссылку'></div>\
@@ -732,12 +665,8 @@ $(document).ready(function () {
 
         $("#lastTventy ul").prepend(
             "<li id_number = '" + data[0]['id'] + "' title = '" + data[i]['data'] + "' data-sec = '" + data[i]['timeCreat'] + "'>\
-					<div class='item' title='" + data[0]['title'] + "' style ='background: " + data[0]['background'] + "' ><a href='" + data[0]['links'] + "' rel='" + data[0]['group'] + "' target='_blank' style ='background: url(" + data[0]['icon'] + ") no-repeat center/87% 82%;' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
+					<div class='item' title='" + data[0]['title'] + "' style ='background: " + data[0]['background'] + "' ><a href='" + data[0]['links'] + "' rel='" + data[0]['group'] + "' target='_blank' style ='background: url(" + data[0]['icon'] + ");' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
 					\
-						<div class='view_link' title='' style ='background: url(" + data[0]['screen'] + ") no-repeat center/100% 100%;' ></div> \
-						\
-						<div class='screen' title='Показывает полный скриншот страницы'><a href='" + data[0]['full_screen'] + "' target='_blank'></a></div> \
-						\
 						<div class='apdate'  title='Позваляет изменить параметры ссылки'></div>\
 						\
 						<div class='del'  title='Удаляет данную ссылку'></div>\
