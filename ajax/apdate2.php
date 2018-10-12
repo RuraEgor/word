@@ -148,6 +148,7 @@ if ($apDate != '&&&') {
                 mysql_query("INSERT INTO `$tbLink` (
                                                     `name`,
                                                     `group_id`,
+                                                    `group`,
                                                     `icon`,
                                                     `number`,
                                                     `background`,
@@ -157,7 +158,8 @@ if ($apDate != '&&&') {
                                             VALUES (
                                                     '" . $apDate[1] . "',
                                                     '" . $apDate[2] . "',
-                                                    '" . $apDate[3] . "'
+                                                    '" . $apDate[9] . "',
+                                                    '" . $apDate[3] . "',
                                                     '" . $kolLin . "',
                                                     '" . $apDate[4] . "',
                                                     '" . $apDate[6] . "',
