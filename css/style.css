@@ -381,6 +381,8 @@ body {
 }
 
 #wrapper ul li .item  {
+	display: flex;
+	justify-content: space-between;
 	position: relative;
 	border-radius: 10px;
 	width: 100%;
@@ -438,11 +440,8 @@ body {
 /*------------------*/
 
 #wrapper ul li .item .number  {
-	position: absolute;
 	height: 19px;
 	width: 19px;
-	top: 3px;
-	left: 3px;
 	opacity: 1;
 	font-weight: bolder;
 	font-size: 15px;

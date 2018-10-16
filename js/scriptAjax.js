@@ -160,22 +160,19 @@ $(document).ready(function () {
                         data[i]['icon'] = data[i]['screen'];
                     }
 
+
                     $("#wrapper ul.bom").append(
-                        "<li id_number = '" + data[i]['id'] + "' title = '" + data[i]['data'] + "' data-sec = '" + data[i]['timeCreat'] + "'>\
-						<div class='item' title='" + data[i]['title'] + "' style ='background: " + data[i]['background'] + "' ><a href='" + data[i]['links'] + "' rel='" + data[i]['group'] + "' target='_blank' style ='background-image: url(" + data[i]['icon'] + ");' ></a> <input type='checkbox' class='delMany'  title='Позваляет отметить ссылки для удаления' />\
-						\
-							<div class='apdate'  title='Позваляет изменить параметры ссылки'></div>\
-							\
-							<div class='del'  title='Удаляет данную ссылку'></div>\
-							\
-							<div class='number'>" + data[i]['number'] + "</div> \
-						\
-						</div>\
-						\
-						<h3>\
-							<a href='" + data[i]['links'] + "' title='" + data[i]['name'] + "' target='_blank'>" + data[i]['name'] + "</a>\
-						</h3>\
-					</li>");
+                        templatePhrathe('item',
+                                        data[i]['id'],
+                                        data[i]['data'],
+                                        data[i]['timeCreat'],
+                                        data[i]['title'],
+                                        data[i]['background'],
+                                        data[i]['group'],
+                                        data[i]['icon'],
+                                        data[i]['number'],
+                                        data[i]['name'])
+                    )
                 }
 
                 $('#all_group').slideUp(100);
